@@ -6,4 +6,4 @@ do
 	echo "file '$1/"$CMD"'"
 	echo "file '$1/silencio.wav'"
 done\
-> samples.txt
+> lista-samples.txt

@@ -30,6 +30,7 @@ ApplicationWindow {
 
 
     //Variables Globales
+    property var keyEventObjectReceiver
     property bool iniciada: false
     property bool gd: false //Git Downloaded
     property string qlandPath
@@ -239,7 +240,13 @@ ApplicationWindow {
                 Qt.quit()
             }
         }
+        Keys.onPressed: {
+            if(app.keyEventObjectReceiver){
+                app.keyEventObjectReceiver.event(event)
+            }
+        }
     }
+
     Ms{id:ms}//MagicSil
     Timer{
         id:tu
@@ -313,6 +320,7 @@ ApplicationWindow {
     }
     onModChanged: appSettings.umod=mod
 
+
     Component.onCompleted: {
         Sil.setDataSils()
 
@@ -385,9 +393,9 @@ ApplicationWindow {
         //en el mòdulo Xp.qml.
         var omitirIntro=false
 
-        if(app.qt){
+        if(!app.qt){
             app.mod=0
-            app.s=0
+            app.s=2
         }else{
             if(omitirIntro){
                 app.mod=app.umod

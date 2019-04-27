@@ -26,7 +26,7 @@ Rectangle {
         property bool paused
         property int to: 0
         volume: appSettings.volume
-        source: 'h/sils-ms/qt-1.4/sil-qt-v1.4.flac'
+        source: 'samples.wav'
         onPlaying: {
             tstop.running=true
             p=true
@@ -50,7 +50,7 @@ Rectangle {
         id: tstop
         repeat: true
         running: false
-        interval: 10
+        interval: 1
         onTriggered: {
             if(mediaPlayer.position>=mediaPlayer.to){
                 tstop.running=false

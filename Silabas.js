@@ -1,22 +1,17 @@
-var voiceSil='qt'
-var versionSil='1.4'
-var silMsLocation='./h/sils-ms/'+voiceSil+'-'+versionSil
+var silMsLocation='./'
 var jsonSil=''
 var silabas=[];
 
-
-//var msSils=[];/**/
-
 function setDataSils(){
-    if(unik.fileExist(silMsLocation+'/sils.txt')){
-        console.log('Cargando silabas: '+silMsLocation+'/sils.txt')
-        var s=''+unik.getFile(silMsLocation+'/sils.txt')
+    if(unik.fileExist(silMsLocation+'/samples.txt')){
+        console.log('Cargando samples: '+silMsLocation+'/samples.txt')
+        var s=''+unik.getFile(silMsLocation+'/samples.txt')
         app.arraySilabas=s.split('\n')
         s=''+unik.getFile(silMsLocation+'/mssils.txt')
         app.arrayMsSils=s.split('\n')
         setSil()
     }else{
-        console.log('Error! al cargar silabas: '+silMsLocation+'/sils.txt')
+        console.log('Error! al cargar samples: '+silMsLocation+'/samples.txt')
     }
 }
 
