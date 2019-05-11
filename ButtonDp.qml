@@ -14,7 +14,7 @@ Item {
     MediaPlayer {
         id: mediaPlayer
         volume: appSettings.volume
-        source: 'original_samples_v1/'+r.text+'.wav'
+        source: app.qlandPath+'/original_samples_v1/'+r.text+'.wav'
     }
     Rectangle{
         id: xR1
