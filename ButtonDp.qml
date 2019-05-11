@@ -10,6 +10,7 @@ Item {
     property color backgroudColor: app.c3
     property color fontColor: app.c2
     property alias t: l.text
+    property int numero
     MediaPlayer {
         id: mediaPlayer
         volume: appSettings.volume
@@ -63,6 +64,13 @@ Item {
         anchors.centerIn: parent
         wrapMode: Text.WordWrap
         horizontalAlignment: Text.AlignHCenter
+    }
+    Text {
+        id: txtNumero
+        width: app.fs
+        font.pixelSize: r.width*0.2
+        color: 'yellow'
+        text: parseInt(r.numero)
     }
     MouseArea{
         id: maBX
