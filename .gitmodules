@@ -1,3 +1,9 @@
 [submodule "m2000/s2/unik-drumppad-mod-001"]
 	path = m2000/s2/unik-drumppad-mod-001
 	url = git@github.com:nextsigner/unik-drumppad-mod-001.git
+[submodule "m2000/s1/unik-drumppad-mod-index"]
+	path = m2000/s1/unik-drumppad-mod-index
+	url = git@github.com:nextsigner/unik-drumppad-mod-index.git
+[submodule "m2000/s0/unik-drumppad-mod-intro"]
+	path = m2000/s0/unik-drumppad-mod-intro
+	url = git@github.com:nextsigner/unik-drumppad-mod-intro.git
