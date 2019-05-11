@@ -334,7 +334,7 @@ ApplicationWindow {
         if(Qt.platform.os==='linux'){
             qlandPath=unik.getPath(5)
         }else if(Qt.platform.os==='android'){
-            qlandPath=appsDir+'/unik-slg'
+            qlandPath=appsDir+'/'+app.moduleName
         }else{
             qlandPath=unik.getPath(5)
             console.log('Windows qlandPath: '+app.qlandPath)
