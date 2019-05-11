@@ -50,7 +50,7 @@ Item {
         id: a
         text:(''+r.text).replace(/-/g,' ')
         width: r.width-app.fs
-        font.pixelSize: r.fs
+        font.pixelSize: r.fs*0.8
         color: r.fontColor
         anchors.centerIn: parent
         wrapMode: Text.WordWrap
@@ -59,17 +59,23 @@ Item {
     Text {
         id: l
         width: r.width-app.fs
-        font.pixelSize: r.width*0.5
+        font.pixelSize: r.width*0.25
         color: 'red'
-        anchors.centerIn: parent
-        wrapMode: Text.WordWrap
-        horizontalAlignment: Text.AlignHCenter
+        anchors.top: parent.top
+        anchors.topMargin: app.fs*0.1
+        anchors.right: parent.right
+        anchors.rightMargin: app.fs*0.1
+        visible: Qt.platform.os!=='android'
     }
     Text {
         id: txtNumero
         width: app.fs
-        font.pixelSize: r.width*0.2
-        color: 'yellow'
+        font.pixelSize: r.width*0.25
+        anchors.top: parent.top
+        anchors.topMargin: app.fs*0.1
+        anchors.left: parent.left
+        anchors.leftMargin: app.fs*0.1
+        color: app.c1
         text: parseInt(r.numero)
     }
     MouseArea{

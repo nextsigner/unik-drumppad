@@ -90,7 +90,7 @@ ApplicationWindow {
         width: app.an
         height: app.al
         anchors.centerIn: parent
-        rotation: app.width>app.height?0:-90
+        //rotation: app.width>app.height?0:-90
         MouseArea{
             anchors.fill: parent
             onDoubleClicked: app.visibility="FullScreen"
