@@ -16,7 +16,7 @@ ApplicationWindow {
     height: 480
     color: app.c3
     property bool qt: false
-    property string moduleName: 'espanish'
+    property string moduleName: 'drumppad'
     property real ffs: Qt.platform.os!=='android'?0.027:0.03
     property int fs: app.width>app.height?app.width*ffs:app.height*ffs//App Font Size Value
     property int an: app.width>app.height?app.width:app.height
@@ -61,7 +61,7 @@ ApplicationWindow {
 
     Settings{
         id: appSettings
-        category: 'conf-unik-slg2'
+        category: 'conf-'+app.moduleName
         property int cantRun
         property bool fullScreen
         property real volume
@@ -107,7 +107,7 @@ ApplicationWindow {
             visible:xEstado.text!==''
             Text {
                 id: xEstado
-                text: 'unik-slg'
+                text: app.moduleName
                 font.pixelSize: app.fs
                 anchors.centerIn: parent
                 color:app.c2
@@ -258,7 +258,7 @@ ApplicationWindow {
             tu.v++
             var d = new Date(Date.now())
             unik.setDebugLog(false)
-            var ur0 = ''+unik.getHttpFile('https://github.com/nextsigner/unik-slg/commits/master?r='+d.getTime())
+            var ur0 = ''+unik.getHttpFile('https://github.com/nextsigner/'+app.moduleName+'/commits/master?r='+d.getTime())
             var m0=ur0.split("commit-title")
             var m1=(''+m0[1]).split('</p>')
             var m2=(''+m1[0]).split('\">')
@@ -324,7 +324,7 @@ ApplicationWindow {
     Component.onCompleted: {
         Sil.setDataSils()
 
-        var ukldata='-folder='+appsDir+'/'+app.moduleName+' -cfg'
+        var ukldata='-folder='+appsDir+'/'+app.moduleName
         var ukl=appsDir+'/link_'+app.moduleName+'.ukl'
         unik.setFile(ukl, ukldata)
 
